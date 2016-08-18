@@ -18,7 +18,7 @@
 		sap.ui.getCore().attachInit(function () {
 			new sap.m.Text({//实例一个SAPUI5 text control
 				text: "Hello World"
-			}).placeAt("content");
+			}).placeAt("content");//将Text对象放入ID为"content"的对象中
 		});
 	</script>
 </head>
@@ -27,4 +27,4 @@
 </html>
 ```
 
-*  `placeAt` function 
+*  `placeAt`  	SAPUI5封装的方法
