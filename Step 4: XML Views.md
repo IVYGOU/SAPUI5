@@ -1,7 +1,7 @@
 * App.view.xml
 ```xml
 <mvc:View
-   xmlns="sap.m"
+   xmlns="sap.m"//xml命名空间属性
    xmlns:mvc="sap.ui.core.mvc">
    <Text text="Hello World"/>
 </mvc:View>
@@ -23,7 +23,7 @@
 		data-sap-ui-libs="sap.m"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
-		data-sap-ui-resourceroots='{
+		data-sap-ui-resourceroots='{ //
 			"sap.ui.demo.wt": "./"
 		}'>
 	</script>
