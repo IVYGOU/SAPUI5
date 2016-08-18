@@ -16,7 +16,7 @@
 	</script>
 	<script>
 		sap.ui.getCore().attachInit(function () {
-			new sap.m.Text({
+			new sap.m.Text({//实例一个SAPUI5 text control
 				text: "Hello World"
 			}).placeAt("content");
 		});
