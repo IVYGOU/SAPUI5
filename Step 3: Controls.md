@@ -28,6 +28,5 @@
 ```
 
 *  `placeAt`  	  
-Only instances of sap.ui.core.Control or their subclasses can be rendered stand-alone and have a placeAt function.   
-
+Only instances of sap.ui.core.Control or their subclasses can be rendered stand-alone and have a placeAt function.  
 Each control extends sap.ui.core.Element that can only be rendered inside controls. 
