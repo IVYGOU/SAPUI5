@@ -23,14 +23,14 @@
 		data-sap-ui-libs="sap.m"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
-		data-sap-ui-resourceroots='{ //告诉SAPUI5 core在sap.ui.demo.wt命名空间中的资源与index.html在相同文件夹下
-			"sap.ui.demo.wt": "./"
+		data-sap-ui-resourceroots='{ 
+			"sap.ui.demo.wt": "./"   // ./表示与当前index.html相同的文件夹，./的别名为sap.ui.demo.wt
 		}'>
 	</script>
 	<script>
 		sap.ui.getCore().attachInit(function () {
 			sap.ui.xmlview({
-				viewName: "sap.ui.demo.wt.view.App"
+				viewName: "sap.ui.demo.wt.view.App"//xmlview对象名为sap.ui.demo.wt.view.App，即为上面定义的App.view.xml文件
 			}).placeAt("content");
 		});
 	</script>
