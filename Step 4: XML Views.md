@@ -2,7 +2,7 @@
 ```xml
 <mvc:View
    xmlns="sap.m"//xml命名空间属性
-   xmlns:mvc="sap.ui.core.mvc">
+   xmlns:mvc="sap.ui.core.mvc">//定义一个额外的sap.ui.core命名空间，别名为mvc
    <Text text="Hello World"/>
 </mvc:View>
 ```
@@ -23,7 +23,7 @@
 		data-sap-ui-libs="sap.m"
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
-		data-sap-ui-resourceroots='{ //
+		data-sap-ui-resourceroots='{ //告诉SAPUI5 core在sap.ui.demo.wt命名空间中的资源与index.html在相同文件夹下
 			"sap.ui.demo.wt": "./"
 		}'>
 	</script>
