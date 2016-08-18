@@ -4,7 +4,7 @@
    xmlns="sap.m"//xml命名空间属性
    xmlns:mvc="sap.ui.core.mvc">//定义一个额外的sap.ui.core命名空间，别名为mvc
    <Text text="Hello World"/>
-</mvc:View>
+</mvc:View>//mvc即为sap.ui.core
 ```
 
 
@@ -24,8 +24,8 @@
 		data-sap-ui-compatVersion="edge"
 		data-sap-ui-preload="async"
 		data-sap-ui-resourceroots='{ 
-			"sap.ui.demo.wt": "./"   // ./表示与当前index.html相同的文件夹，./的别名为sap.ui.demo.wt
-		}'>
+			"sap.ui.demo.wt": "./"   
+		}'>  // ./表示与当前index.html相同的文件夹，./的别名为sap.ui.demo.wt
 	</script>
 	<script>
 		sap.ui.getCore().attachInit(function () {
@@ -39,3 +39,5 @@
 </body>
 </html>
 ```
+
+App.view.xml的使用可以使显示的文件分开，独立操作。
