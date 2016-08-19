@@ -2,7 +2,7 @@
 
 ```xml
 <mvc:View
-   controllerName="sap.ui.demo.wt.controller.App"//1，设置controllerName的作用？怎么调用，与controller进行连接？
+   controllerName="sap.ui.demo.wt.controller.App"//1，设置controllerName的作用即可与App.controller.js进行连接。
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button
@@ -14,11 +14,11 @@
 * webapp/controller/App.controller.js 
 
 ```javascript
-sap.ui.define([//2,sModuleName参数呢？
-   "sap/ui/core/mvc/Controller"//3,依赖性的意思是？
+sap.ui.define([//参数会根据传入参数类型进行自动判断
+   "sap/ui/core/mvc/Controller"
 ], function (Controller) {
    "use strict";
-   return Controller.extend("sap.ui.demo.wt.controller.App", {4.会自动加载App.controller.js?extend作用：创建子类
+   return Controller.extend("sap.ui.demo.wt.controller.App", {//extend作用：创建子类；设置extend子类的名字。
       onShowHello : function () {
          // show a native JavaScript alert
          alert("Hello World");
