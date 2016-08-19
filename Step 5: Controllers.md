@@ -16,7 +16,7 @@
 ```javascript
 sap.ui.define([//参数会根据传入参数类型进行自动判断
    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+], function (Controller) {//function的作用是指定义这个module需要执行的动作，function中的参数为aDependencies传入参数的别名
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.App", {//extend作用：创建子类；设置extend子类的名字。
       onShowHello : function () {
