@@ -1,7 +1,7 @@
 * App.view.xml
 ```xml
 <mvc:View
-   xmlns="sap.m"//xml命名空间属性
+   xmlns="sap.m"//xml命名空间属性，定义默认空间名称
    xmlns:mvc="sap.ui.core.mvc">//定义一个额外的sap.ui.core命名空间，别名为mvc
    <Text text="Hello World"/>
 </mvc:View>//mvc即为sap.ui.core
