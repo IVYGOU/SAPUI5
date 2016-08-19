@@ -29,7 +29,7 @@ sap.ui.define([//2,sModuleName参数呢？
 
 sap.ui.define(sModuleName?, aDependencies?, vFactory, bExport?)
 
-
+sap.ui.core.mvc.Controller.extend(sClassName, oClassInfo?, FNMetaImpl?)
 
 * index.html
 
