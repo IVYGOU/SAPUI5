@@ -18,7 +18,7 @@ sap.ui.define([//2,sModuleName参数呢？
    "sap/ui/core/mvc/Controller"//3,依赖性的意思是？
 ], function (Controller) {
    "use strict";
-   return Controller.extend("sap.ui.demo.wt.controller.App", {4.会自动加载App.controller.js?extend的作用？
+   return Controller.extend("sap.ui.demo.wt.controller.App", {4.会自动加载App.controller.js?extend作用：创建子类
       onShowHello : function () {
          // show a native JavaScript alert
          alert("Hello World");
