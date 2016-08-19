@@ -20,7 +20,7 @@ Javascript Object Notation，Javascript对象表示法，它是一种结构化�
 		text="Say Hello"
 		press="onShowHello" />
 	<Input
-		value="{/recipient/name}"
+		value="{/recipient/name}"//value取自于recipient的name属性
 		description="Hello {/recipient/name}"
 		valueLiveUpdate="true"
 		width="60%" />
@@ -37,7 +37,7 @@ sap.ui.define([
 ], function (Controller, MessageToast, JSONModel) {
    "use strict";
    return Controller.extend("sap.ui.demo.wt.controller.App", {
-      onInit : function () {
+      onInit : function () {//onInit类似构造函数，当一个controller被创建时会被调用
          // set data model on view
          var oData = {
             recipient : {
@@ -52,4 +52,36 @@ sap.ui.define([
       }
    });
 });
+```
+* index.html
+
+```html
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="utf-8">
+      <title>Walkthrough</title>
+      <script
+         id="sap-ui-bootstrap"
+         src="/resources/sap-ui-core.js"
+         data-sap-ui-theme="sap_bluecrystal"
+         data-sap-ui-libs="sap.m"
+         data-sap-ui-compatVersion="edge"   //为了能够使用复杂的绑定语法
+         data-sap-ui-preload="async" 
+	 data-sap-ui-resourceroots='{
+		"sap.ui.demo.wt": "./"
+	}' >
+      </script>
+      <script>
+         sap.ui.getCore().attachInit(function () {
+			sap.ui.xmlview({
+				viewName: "sap.ui.demo.wt.view.App"
+			}).placeAt("content");
+         });
+      </script>
+   </head>
+   <body class="sapUiBody" id="content">
+   </body>
+</html>
 ```
