@@ -45,7 +45,7 @@ sap.ui.define([
             }
          };
          var oModel = new JSONModel(oData);
-         this.getView().setModel(oModel);
+         this.getView().setModel(oModel);//将oModel创建一个Model并传给view
       },
       onShowHello : function () {
          MessageToast.show("Hello World");
