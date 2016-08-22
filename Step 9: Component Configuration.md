@@ -1,4 +1,4 @@
-* webapp/Component.js //
+* webapp/Component.js 
 
 ```javascript
 sap.ui.define([
