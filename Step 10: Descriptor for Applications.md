@@ -1,8 +1,8 @@
 * webapp/manifest.json (New)
 
-包含contains all global application settings and parameters
+包含all global application settings and parameters
 
-```javascript
+```json
 {
   "_version": "1.1.0",
   "sap.app": {
