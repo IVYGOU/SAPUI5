@@ -1,7 +1,10 @@
-* webapp/i18n/i18n.properties (New)
+* webapp/i18n/i18n.properties (New)  
+
+属性文件：包含每个元素的name-value。
+
 ```
 showHelloButtonText=Say Hello
-helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问）
+helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问） Q：这一句话的含义？？
 ```
 
 * controller/App.controller.js
@@ -24,19 +27,43 @@ sap.ui.define([
          var oModel = new JSONModel(oData);
          this.getView().setModel(oModel);
      // set i18n model on view
-         var i18nModel = new ResourceModel({
+         var i18nModel = new ResourceModel({//Q:ResourceModel是什么？
             bundleName: "sap.ui.demo.wt.i18n.i18n"
          });
          this.getView().setModel(i18nModel, "i18n");
       },
       onShowHello : function () {
          // read msg from i18n model
-         var oBundle = this.getView().getModel("i18n").getResourceBundle();
-         var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+         var oBundle = this.getView().getModel("i18n").getResourceBundle();//Q:getResourceBundle()的含义？jQuery.sap.util.ResourceBundle
+         var sRecipient = this.getView().getModel().getProperty("/recipient/name");//Q:为什么此处省略getModel参数？省略的含义是？
          var sMsg = oBundle.getText("helloMsg", [sRecipient]);
          // show message
          MessageToast.show(sMsg);
       }
    });
 });
+```
+
+```javascript
+getView():   
+Returns the view associated with this controller or undefined.
+
+setModel(oModel, sName?): Sets or unsets a model for the given model name for this ManagedObject.
+
+getModel(sName?):Get the model to be used for data bindings with the given model name.
+
+
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Button
+		text="{i18n>showHelloButtonText}"//Q:>符号的含义是什么？
+		press="onShowHello"/>
+	<Input
+		value="{/recipient/name}"
+		description="Hello {/recipient/name}"
+		valueLiveUpdate="true"
+		width="60%"/>
+</mvc:View>
 ```
