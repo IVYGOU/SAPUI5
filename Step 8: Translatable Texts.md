@@ -4,7 +4,9 @@
 
 ```
 showHelloButtonText=Say Hello
-helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问）具体可参考https://wiki.wdf.sap.corp/wiki/display/cecnterui/The+Conduct+of+resourceBundle.getText%28%29+to+get+key%3Avalue+in+i18n.properties
+helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问）具体可参考
+https://wiki.wdf.sap.corp/wiki/display/cecnterui/The+Conduct+of+resourceBundle.getText%28%29+to+get+key%3Avalue+in+i18n.properties；
+若此参数没有则是undefined。
 ```
 
 * controller/App.controller.js
