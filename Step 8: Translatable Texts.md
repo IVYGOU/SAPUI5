@@ -1,10 +1,10 @@
 * webapp/i18n/i18n.properties (New)  
 
-属性文件：包含每个元素的name-value。
+属性文件：包含每个元素的name-value(键值对)。
 
 ```
 showHelloButtonText=Say Hello
-helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问） Q：这一句话的含义？？
+helloMsg=Hello {0}  //对应参数被访问顺序（此处从0开始访问）具体可参考https://wiki.wdf.sap.corp/wiki/display/cecnterui/The+Conduct+of+resourceBundle.getText%28%29+to+get+key%3Avalue+in+i18n.properties
 ```
 
 * controller/App.controller.js
