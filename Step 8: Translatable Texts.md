@@ -24,18 +24,18 @@ sap.ui.define([
                name : "World"
             }
          };
-         var oModel = new JSONModel(oData);
+         var oModel = new JSONModel(oData);//创建一个名字，但是未给model命名
          this.getView().setModel(oModel);
      // set i18n model on view
-         var i18nModel = new ResourceModel({//Q:ResourceModel是什么？
+         var i18nModel = new ResourceModel({//Q:ResourceModel：Model implementation for resource bundles
             bundleName: "sap.ui.demo.wt.i18n.i18n"
          });
-         this.getView().setModel(i18nModel, "i18n");
+         this.getView().setModel(i18nModel, "i18n");//因为view和model是绑定的，因此每次建立一个model都需要在特定的view中
       },
       onShowHello : function () {
          // read msg from i18n model
-         var oBundle = this.getView().getModel("i18n").getResourceBundle();//Q:getResourceBundle()的含义？jQuery.sap.util.ResourceBundle
-         var sRecipient = this.getView().getModel().getProperty("/recipient/name");//Q:为什么此处省略getModel参数？省略的含义是？
+         var oBundle = this.getView().getModel("i18n").getResourceBundle();
+         var sRecipient = this.getView().getModel().getProperty("/recipient/name");//Q:省略getModel参数:表示获得没有名字的model
          var sMsg = oBundle.getText("helloMsg", [sRecipient]);
          // show message
          MessageToast.show(sMsg);
@@ -44,7 +44,7 @@ sap.ui.define([
 });
 ```
 
-```javascript
+
 getView():   
 Returns the view associated with this controller or undefined.
 
@@ -52,7 +52,7 @@ setModel(oModel, sName?): Sets or unsets a model for the given model name for th
 
 getModel(sName?):Get the model to be used for data bindings with the given model name.
 
-
+```javascript
 <mvc:View
 	controllerName="sap.ui.demo.wt.controller.App"
 	xmlns="sap.m"
