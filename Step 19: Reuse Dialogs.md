@@ -52,7 +52,7 @@ sap.ui.define([
 			}
 			return this._oDialog;
 		},
-		open : function (oView) {
+		open : function (oView) {//第一次调用open时实例化dialog
 			var oDialog = this._getDialog();
 			// connect dialog to view (models, lifecycle)
 			oView.addDependent(oDialog);
@@ -65,3 +65,30 @@ sap.ui.define([
 	});
 });
 ```
+* webapp/controller/HelloPanel.controller.js
+
+```javascript
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast"
+], function (Controller, MessageToast) {
+	"use strict";
+	return Controller.extend("sap.ui.demo.wt.controller.HelloPanel", {
+		onShowHello : function () {
+			// read msg from i18n model
+			var oBundle = this.getView().getModel("i18n").getResourceBundle();
+			var sRecipient = this.getView().getModel().getProperty("/recipient/name");
+			var sMsg = oBundle.getText("helloMsg", [sRecipient]);
+			// show message
+			MessageToast.show(sMsg);
+		},
+		onOpenDialog : function () {
+			this.getOwnerComponent().helloDialog.open(this.getView());
+		}
+	});
+});
+```
+
+getOwnerComponent(): sap.ui.core.Component   
+
+Gets the component of the controller's view
