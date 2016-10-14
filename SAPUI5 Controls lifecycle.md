@@ -6,12 +6,16 @@ Your little Control is born! Function is called by the framework during construc
 * onBeforeRendering   
 Called by the framework before the rendering of the control is started. Triggers before every (re)rendering.
 
+Called when a View is instantiated and its controls (if available) are already created. Can be used to modify the View before it is displayed to bind event handlers and do other one-time initialization.
+
 * onAfterRendering   
 Called by the framework after the rendering of the control has completed. Triggers after every (re)rendering.
 
 * exit 
 RIP little Control! Cleans up the element instance before destruction. Called by the framework. Do your clean up here.   
-Btw: If you need to explicitly destruct a Control/Element you should call destroy and not directly exit.
+Btw: If you need to explicitly destruct a Control/Element you should call destroy and not directly exit. 
+
+Called when the View is destroyed. Use this one to free resources and finalize activities
 
 
 ```javasccript
@@ -43,6 +47,11 @@ sap.ui.core.Control.extend("a.sample.Control", {
 
 });
 ```
+Tips: 
+Init and exit are called once but onBeforeRendering and onAfterRendering are called every time.
+
+For Controllers without a View, no lifecycle hooks will be called.
+
 
 
 Reference from: http://stackoverflow.com/questions/28703736/how-the-lifecycle-of-ui5-control-works
