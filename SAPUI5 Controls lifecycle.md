@@ -48,8 +48,5 @@ sap.ui.core.Control.extend("a.sample.Control", {
 Tips: 
 Init and exit are called once but onBeforeRendering and onAfterRendering are called every time.
 
-For Controllers without a View, no lifecycle hooks will be called.
-
-
 
 Reference from: http://stackoverflow.com/questions/28703736/how-the-lifecycle-of-ui5-control-works
