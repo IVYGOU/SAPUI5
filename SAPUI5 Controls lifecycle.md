@@ -1,6 +1,7 @@
 # SAPUI5 Controls lifecycle
 
-* init 
+* init    
+
 Your little Control is born! Function is called by the framework during constructor execution. Do your initialization stuff here.
 
 * onBeforeRendering   
