@@ -11,8 +11,9 @@ this.getView().byId("AccountRecentItemsList").setModel(new sap.ui.model.json.JSO
 * model创建时的可赋初始值如下：
 ```javascript
 this.getView().byId("AccountRecentItemsList").setModel(new sap.ui.model.json.JSONModel({"key1":"vaule1"}));
-```
-* 向model中放入新值有两种方法：
+``` 
+* 向model中放入新值有两种方法：        
+
 1.`setData()` 会完全覆盖这个model里所有的oData(即所有的properties)
 ```javascript
 this.getView().byId("AccountRecentItemsList").getModel().setData({"visible": false});
@@ -20,4 +21,15 @@ this.getView().byId("AccountRecentItemsList").getModel().setData({"visible": fal
 2.`setProperty()`只会更改当前这个Property的属性，没有则增加一个Property。
 ```javascript
 this.getView().byId("AccountRecentItemsList").getModel().setProperty("/visible", false);
+```
+* 在view中使用model里的值    
+
+1.有名字的model：
+```xml
+mode="{device>/listMode}"
+```     
+
+2.没有名字的model:
+```xml
+visible="{/visible}"
 ```
